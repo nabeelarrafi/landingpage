@@ -25,9 +25,9 @@ services:
     restart: unless-stopped
 volumes:
   web-root
-  db-mysql:
+  db-mysqld:
     image: mysql:8.0
-    container_name: db-mysql
+    container_name: db-mysqld
     command: '--wait_timeout=28800 --default-authentication-plugin=mysql_native_password'
     volumes:
       - "mysql-data:/var/lib/docker/volumes/blowstack/mysql"
