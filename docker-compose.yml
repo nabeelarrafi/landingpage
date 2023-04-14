@@ -23,9 +23,7 @@ services:
     depends_on:
       - nuxt-app
     restart: unless-stopped
-volumes:
-  web-root
-  
+    
   db-myqsl:
     image: mysql:8.0
     container_name: db-myqsl
