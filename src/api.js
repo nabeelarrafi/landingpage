@@ -1,0 +1,1 @@
+export const baseAPI = "http://192.168.35.7:12000/api/v1";

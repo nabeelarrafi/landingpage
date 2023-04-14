@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #FFB037;
+	transition: 0.5s;
+}
+
+body.active {
+	background: #07689F;
+}
+
+.container {
+	position: relative;
+	width: 800px;
+	height: 500px;
+	margin: 20px;
+}
+
+.bg {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 40px;
+	width: 100%;
+	height: 420px;
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+}
+
+.bg .box {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.bg .box h2 {
+	color: #000000;
+	font-size: 1.2em;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+.bg .box button {
+	cursor: pointer;
+	padding: 10px 20px;
+	background: #FFFFFF;
+	color: #333333;
+	font-size: 16px;
+	font-weight: 500;
+	border: none;
+}
+
+.formBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: #FFFFFF;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+	transition: 0.5s ease-in-out;
+	overflow: hidden;
+}
+
+.formBox.active {
+	left: 50%;
+}
+
+.formBox .form {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	padding: 50px;
+	transition: 0.5s;
+}
+
+.formBox .signinForm {
+	transition-delay: 0.25s;
+}
+
+.formBox.active .signinForm {
+	left: -100%;
+	transition-delay: 0s   ;
+}
+
+.formBox .signupForm {
+	left: 100%;
+}
+
+.formBox.active .signupForm {
+	left: 0;
+}
+
+.formBox .form form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.formBox .form form h3 {
+	font-size: 1.5em;
+	color: #333;
+	margin-bottom: 20px;
+	font-weight: 500;
+}
+
+.formBox .form form input {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 10px;
+	outline: none;
+	font-size: 16px;
+	border: 1px solid #333;
+} 
+
+.formBox .form form .forgot {
+	color: #333;
+}
+
+.form ul li {
+	display: inline-block;
+}
+
+#login {
+	background: #FFB037;
+	border: none;
+	color: #000;
+	max-width: 100px;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#back1 {
+	background: #FFB037;
+	border: none;
+	color: #000;
+	max-width: 100px;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#register {
+	background: #07689F;
+	border: none;
+	color: #fff;
+	max-width: 100px;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+#back2 {
+	background: #07689F;
+	border: none;
+	color: #fff;
+	max-width: 100px;
+	cursor: pointer;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.show-hide {
+	position: absolute;
+	right: 62px;
+	top: 185px;
+}
+
+.show-hide i{
+	font-size: 19px;
+	cursor: pointer;
+	display: none;
+}
+
+.show-hide i.hide:before{
+	content: '\f070';
+}
+
+input:valid ~ .show-hide i{
+	display: block;
+}
+
+.show-hide2 {
+	position: absolute;
+	right: 62px;
+	top: 254px;
+}
+
+.show-hide2 i{
+	font-size: 19px;
+	cursor: pointer;
+	display: none;
+}
+
+.show-hide2 i.hide:before{
+	content: '\f070';
+}
+
+input:valid ~ .show-hide2 i{
+	display: block;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) { /*Phone & Tablet*/
+	.container {
+		max-width: 300px;
+		height: 620px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}	
+
+	.container .bg {
+		top: 0;
+		height: 100%;
+	}
+
+	.formBox {
+		width: 100%;
+		height: 490px;
+		top: 0;
+		box-shadow: none;
+	}
+
+	.bg .box {
+		position: absolute;
+		width: 100%;
+		height: 150px;
+		bottom: 0;
+	}
+
+	.box.signin {
+		top: 0;
+	}
+
+	.formBox.active {
+		left: 0;
+		top: 130px;
+	}
+}
